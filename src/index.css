@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+:root {
+  --bg-primary: #0a0a0c;
+  --bg-surface: #111114;
+  --bg-surface-alt: #18181c;
+  --border-color: #232329;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-hover: #383842;
+  --text-primary: #f3f1ec;
+  --text-muted: #8e8e96;
+  --btn-primary-bg: #f3f1ec;
+  --btn-primary-text: #0a0a0c;
+  --btn-secondary-bg: #18181c;
+  --card-grid-dot: rgba(255, 255, 255, 0.08);
+  --capsule-bg: rgba(18, 18, 22, 0.88);
+  --capsule-border: rgba(255, 255, 255, 0.22);
+  --arch-bg: #24262b;
+  --arch-grad-from: #333740;
+  --arch-grad-to: #0a0a0c;
+  --vignette-color: #0a0a0c;
+  --nav-backdrop: rgba(10, 10, 12, 0.85);
+  --modal-backdrop: rgba(10, 10, 12, 0.85);
+}
+
+[data-theme="light"], .light {
+  --bg-primary: #f9f9f8;
+  --bg-surface: #ffffff;
+  --bg-surface-alt: #f1efe9;
+  --border-color: #e4e0d7;
+  --border-subtle: rgba(0, 0, 0, 0.06);
+  --border-hover: #c9c4b7;
+  --text-primary: #111114;
+  --text-muted: #6b6a72;
+  --btn-primary-bg: #111114;
+  --btn-primary-text: #f9f9f8;
+  --btn-secondary-bg: #f1efe9;
+  --card-grid-dot: rgba(0, 0, 0, 0.06);
+  --capsule-bg: rgba(255, 255, 255, 0.92);
+  --capsule-border: rgba(0, 0, 0, 0.12);
+  --arch-bg: #dedbd3;
+  --arch-grad-from: #e8e5de;
+  --arch-grad-to: #f9f9f8;
+  --vignette-color: #f9f9f8;
+  --nav-backdrop: rgba(249, 249, 248, 0.88);
+  --modal-backdrop: rgba(20, 20, 24, 0.75);
+}
+
+@theme {
+  --color-brand-black: var(--bg-primary);
+  --color-brand-surface: var(--bg-surface);
+  --color-brand-surface-alt: var(--bg-surface-alt);
+  --color-brand-border: var(--border-color);
+  --color-brand-light: var(--text-primary);
+  --color-brand-muted: var(--text-muted);
+  --color-brand-accent: var(--btn-primary-bg);
+
+  --font-display: 'Syne', sans-serif;
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+@layer base {
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  ::selection {
+    background-color: var(--text-primary);
+    color: var(--bg-primary);
+  }
+}
+
+/* Architectural Arch Mask & Outline */
+.arch-container {
+  border-top-left-radius: 9999px;
+  border-top-right-radius: 9999px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  background-color: var(--arch-bg);
+  transition: background-color 0.3s ease;
+}
+
+/* Subtle Glass Capsule */
+.capsule-badge {
+  background: var(--capsule-bg);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--capsule-border);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+/* Subtle Grid Background for Showcase Cards */
+.card-grid-bg {
+  background-image: radial-gradient(var(--card-grid-dot) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Infinite Marquee Running Loop */
+@keyframes marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Custom Cursor Rules for fine pointer desktop displays */
+@media (hover: hover) and (pointer: fine) {
+  html.has-custom-cursor,
+  html.has-custom-cursor body,
+  html.has-custom-cursor a,
+  html.has-custom-cursor button,
+  html.has-custom-cursor [role="button"],
+  html.has-custom-cursor .cursor-pointer {
+    cursor: none !important;
+  }
+}
+

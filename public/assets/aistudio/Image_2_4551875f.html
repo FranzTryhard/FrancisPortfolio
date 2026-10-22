@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Francis | Software Developer &amp; IT Student</title>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Syne & Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;family=Syne:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script data-purpose="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              black: '#0a0a0c',
+              surface: '#111114',
+              surfaceAlt: '#18181c',
+              border: '#232329',
+              light: '#f3f1ec',
+              muted: '#8e8e96',
+              accent: '#d8d4cb'
+            }
+          },
+          fontFamily: {
+            display: ['Syne', 'sans-serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom Styles: Visual Utilities & Refinements -->
+<style data-purpose="custom-styling">
+    body {
+      background-color: #0a0a0c;
+      color: #f3f1ec;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+      selection-background-color: #f3f1ec;
+      selection-color: #0a0a0c;
+    }
+
+    ::selection {
+      background: #f3f1ec;
+      color: #0a0a0c;
+    }
+
+    /* Architectural Arch Mask & Outline */
+    .arch-container {
+      border-top-left-radius: 9999px;
+      border-top-right-radius: 9999px;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    /* Subtle Glass Capsule */
+    .capsule-badge {
+      background: rgba(18, 18, 22, 0.88);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+    }
+
+    /* Subtle Grid Background for Showcase Cards */
+    .card-grid-bg {
+      background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+  </style>
+</head>
+<body class="bg-brand-black text-brand-light antialiased selection:bg-brand-light selection:text-brand-black min-h-screen flex flex-col justify-between">
+<!-- BEGIN: SiteNavigation -->
+<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-md bg-brand-black/80 border-b border-brand-border/40" data-purpose="main-navigation">
+<div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 h-20 flex items-center justify-between">
+<!-- Brand Logo Wordmark -->
+<a class="text-xl sm:text-2xl font-bold tracking-tight text-brand-light flex items-center gap-1 group" href="#hero">
+<span>Francis</span>
+<span class="w-1.5 h-1.5 rounded-full bg-brand-light/70 group-hover:bg-brand-light transition-colors"></span>
+</a>
+<!-- Desktop Navigation Links -->
+<nav aria-label="Desktop Navigation" class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide text-brand-muted">
+<a class="hover:text-brand-light transition-colors duration-200" href="#hero">Home</a>
+<a class="hover:text-brand-light transition-colors duration-200" href="#about">About</a>
+<a class="hover:text-brand-light transition-colors duration-200" href="#projects">Projects</a>
+<a class="hover:text-brand-light transition-colors duration-200" href="#skills">Skills</a>
+<a class="hover:text-brand-light transition-colors duration-200" href="#contact">Contact</a>
+</nav>
+<!-- Let's Talk CTA Button -->
+<div class="flex items-center gap-4">
+<a class="inline-flex items-center justify-center px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold bg-brand-light text-brand-black hover:bg-white hover:shadow-[0_0_20px_rgba(243,241,236,0.3)] transition-all duration-300 active:scale-95" href="#contact">
+          Let's Talk
+          <svg class="w-3.5 h-3.5 ml-1.5 transform group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"></path>
+</svg>
+</a>
+</div>
+</div>
+</header>
+<!-- END: SiteNavigation -->
+<main class="flex-grow pt-24 sm:pt-28">
+<!-- BEGIN: HeroSection -->
+<section class="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-10 pb-16 lg:pt-16 lg:pb-24 overflow-hidden" data-purpose="hero-section" id="hero">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center min-h-[580px]">
+<!-- Left Column: Typography & Introductory Narrative -->
+<div class="lg:col-span-6 flex flex-col justify-center z-10">
+<div class="inline-flex items-center gap-2 mb-6">
+<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+<span class="text-xs font-semibold tracking-wider uppercase text-brand-muted">Available for Opportunities</span>
+</div>
+<!-- Giant Headline matching Derek inspiration -->
+<h1 class="text-7xl sm:text-8xl xl:text-9xl font-display font-extrabold tracking-tight text-brand-light leading-none mb-6">
+            Hello!
+          </h1>
+<!-- Concise personal introduction -->
+<p class="text-lg sm:text-xl text-brand-muted max-w-lg font-light leading-relaxed mb-8">
+            I'm <span class="text-brand-light font-medium">Francis</span>, an aspiring software developer and IT student building practical digital experiences through code, experimentation, and problem-solving.
+          </p>
+<!-- Action CTA Group -->
+<div class="flex flex-wrap items-center gap-4">
+<a class="px-7 py-3.5 rounded-full text-sm font-semibold bg-brand-light text-brand-black hover:bg-white transition-all duration-300 shadow-md hover:shadow-[0_0_24px_rgba(243,241,236,0.25)] text-center" href="#projects">
+              Explore My Work
+            </a>
+<a class="px-7 py-3.5 rounded-full text-sm font-medium border border-brand-border bg-brand-surface/40 hover:bg-brand-surface text-brand-light hover:border-brand-muted/60 transition-all duration-300 text-center" href="#contact">
+              Get In Touch
+            </a>
+</div>
+</div>
+<!-- Right Column: Arch Portrait with Floated Design Badges -->
+<div class="lg:col-span-6 flex justify-center items-end relative mt-6 lg:mt-0">
+<!-- Outer Arch Frame Wrapper -->
+<div class="relative w-full max-w-[360px] sm:max-w-[430px] lg:max-w-[440px] aspect-[4/5] flex items-end justify-center">
+<!-- Architectural Arch Container -->
+<div class="arch-container relative w-full h-full overflow-hidden bg-[#24262b] shadow-2xl border-t border-x border-white/10 flex items-end justify-center">
+<!-- Subtle inner backdrop light -->
+<div class="absolute inset-0 bg-gradient-to-b from-[#333740] via-[#212429] to-[#0a0a0c] opacity-60"></div>
+<!-- Centerpiece Portrait: Seamless integration -->
+<img alt="Francis - Software Developer &amp; IT Student" class="relative z-10 w-full h-full object-cover object-top filter contrast-[1.02] brightness-95" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBaz9V7ZdJQ6lzYowH6us7AHEUk9OD9kog5x7DRiEZh-3Fojz7MhbSlUz5yX5LDI6Ih9Ov95TNZd1B05bCtVlfd_txexcs-pgIFuE2cKHPG6i1UZWOdjkWvh8CLoynRf74fR6E_kudTa5j5d5hORgK-wrImJWevKHU4wc2tBma-9x4ULFpzzQH_DGNq2siu4xpF_Azvsj6LlI8hsM6-74AFOBtON97ul5f06nk5orGeiOI5Ec4wG4Udy6N8tg5QNWVbw"/>
+<!-- Bottom gradient vignette to melt the shirt seamlessly into the dark background -->
+<div class="absolute bottom-0 inset-x-0 h-28 bg-gradient-to-t from-brand-black via-brand-black/80 to-transparent z-20 pointer-events-none"></div>
+</div>
+<!-- Floated Badge 1: Development (Upper Right) -->
+<div class="capsule-badge absolute -top-2 right-0 sm:-right-4 px-4 py-1.5 rounded-full z-30 transform rotate-[6deg] hover:rotate-0 transition-transform duration-300 cursor-default">
+<span class="text-xs sm:text-sm font-medium tracking-wide text-brand-light">Development</span>
+</div>
+<!-- Floated Badge 2: Design (Mid Left) -->
+<div class="capsule-badge absolute top-1/2 -left-4 sm:-left-8 px-4 py-1.5 rounded-full z-30 transform -rotate-[10deg] hover:rotate-0 transition-transform duration-300 cursor-default">
+<span class="text-xs sm:text-sm font-medium tracking-wide text-brand-light">Design</span>
+</div>
+<!-- Floated Badge 3: Problem Solving (Lower Right) -->
+<div class="capsule-badge absolute bottom-12 -right-4 sm:-right-6 px-4 py-1.5 rounded-full z-30 transform rotate-[4deg] hover:rotate-0 transition-transform duration-300 cursor-default">
+<span class="text-xs sm:text-sm font-medium tracking-wide text-brand-light">Problem Solving</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: HeroSection -->
+<!-- BEGIN: TechStrip -->
+<section class="border-y border-brand-border/60 bg-brand-surface/30 py-8" data-purpose="technologies-strip">
+<div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
+<span class="text-xs font-bold tracking-[0.25em] text-brand-muted/70 uppercase whitespace-nowrap">
+          CURRENTLY EXPLORING
+        </span>
+<div class="flex flex-wrap items-center justify-center md:justify-end gap-x-8 gap-y-3 text-sm font-medium text-brand-muted">
+<span class="hover:text-brand-light transition-colors">Python</span>
+<span class="text-brand-border select-none">/</span>
+<span class="hover:text-brand-light transition-colors">JavaScript</span>
+<span class="text-brand-border select-none">/</span>
+<span class="hover:text-brand-light transition-colors">PostgreSQL</span>
+<span class="text-brand-border select-none">/</span>
+<span class="hover:text-brand-light transition-colors">React Native</span>
+<span class="text-brand-border select-none">/</span>
+<span class="hover:text-brand-light transition-colors">Node.js</span>
+<span class="text-brand-border select-none">/</span>
+<span class="hover:text-brand-light transition-colors">Django</span>
+</div>
+</div>
+</section>
+<!-- END: TechStrip -->
+<!-- BEGIN: AboutSection -->
+<section class="py-24 sm:py-32 relative" data-purpose="about-section" id="about">
+<div class="max-w-4xl mx-auto px-6 sm:px-8 text-center">
+<!-- Eyebrow -->
+<span class="text-xs font-bold tracking-[0.25em] uppercase text-brand-muted mb-4 inline-block">
+          ABOUT ME
+        </span>
+<!-- Large Editorial Headline -->
+<h2 class="text-2xl sm:text-3xl lg:text-4xl font-light leading-relaxed text-brand-muted mt-4 mb-8">
+          I'm an IT student who enjoys <span class="text-brand-light font-semibold">turning ideas into useful digital solutions</span>. I learn by building projects, experimenting with new technologies, and <span class="text-brand-light font-semibold">solving real-world problems</span>.
+        </h2>
+<!-- Context Narrative -->
+<p class="text-brand-muted/90 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto font-light">
+          My journey revolves around crafting software that balances clean system architecture with purposeful user interfaces. From developing end-to-end full-stack backends to architecting reliable database schemas and responsive cross-platform applications, I focus on practical execution, continuous curiosity, and delivering work that truly works.
+        </p>
+</div>
+</section>
+<!-- END: AboutSection -->
+<!-- BEGIN: SelectedWorkSection -->
+<section class="py-20 border-t border-brand-border/40" data-purpose="portfolio-showcase" id="projects">
+<div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+<div>
+<span class="text-xs font-bold tracking-[0.25em] uppercase text-brand-muted">SELECTED WORK</span>
+<h2 class="text-3xl sm:text-4xl font-display font-bold text-brand-light mt-2">Crafted Concepts &amp; Builds</h2>
+</div>
+<p class="text-sm text-brand-muted max-w-sm">Curated selection of full-stack implementations, mobile prototypes, and interactive experiences.</p>
+</div>
+<div class="space-y-16">
+<!-- Project 01: EasyTrip -->
+<article class="bg-brand-surface rounded-2xl border border-brand-border/70 p-8 sm:p-12 hover:border-brand-muted/40 transition-all duration-300" data-purpose="project-card">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<div class="lg:col-span-5 order-2 lg:order-1 flex flex-col justify-center">
+<span class="text-xs font-mono text-brand-muted tracking-wider mb-2">01 / TRAVEL ARCHITECTURE</span>
+<h3 class="text-2xl sm:text-3xl font-bold text-brand-light mb-3">EasyTrip</h3>
+<p class="text-brand-muted text-sm sm:text-base leading-relaxed mb-6 font-light">
+                  A comprehensive trip-planning application organizing complex travel itineraries by calendar dates, customizable budget tiers, and curated accommodation preferences.
+                </p>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="px-3 py-1 rounded-full text-xs font-mono bg-brand-surfaceAlt border border-brand-border text-brand-light">React Native</span>
+<span class="px-3 py-1 rounded-full text-xs font-mono bg-brand-surfaceAlt border border-brand-border text-brand-light">Node.js</span>
+<span class="px-3 py-1 rounded-full text-xs font-mono bg-brand-surfaceAlt border border-brand-border text-brand-light">PostgreSQL</span>
+</div>
+<div>
+<a class="inline-flex items-center text-xs sm:text-sm font-semibold text-brand-light hover:underline gap-1.5 group" href="#contact">
+<span>View Project Inquiries</span>
+<span class="transform group-hover:translate-x-1 transition-transform">→</span>
+</a>
+</div>
+</div>
+<div class="lg:col-span-7 order-1 lg:order-2 card-grid-bg bg-brand-surfaceAlt rounded-xl border border-brand-border/60 p-6 sm:p-8 flex items-center justify-center min-h-[260px]">
+<!-- Concept Display Block -->
+<div class="w-full max-w-md bg-brand-black/90 rounded-lg p-5 border border-brand-border shadow-xl">
+<div class="flex items-center justify-between pb-3 mb-4 border-b border-brand-border/50 text-xs font-mono text-brand-muted">
+<span class="text-brand-light font-bold">EasyTrip Planner</span>
+<span>v1.2.0 • Online</span>
+</div>
+<div class="space-y-2.5 text-xs">
+<div class="bg-brand-surface p-2.5 rounded border border-brand-border/40 flex justify-between items-center">
+<span class="text-brand-light">Day 1: Arrival &amp; Check-In</span>
+<span class="text-emerald-400 font-mono">Tier A Budget</span>
+</div>
+<div class="bg-brand-surface p-2.5 rounded border border-brand-border/40 flex justify-between items-center">
+<span class="text-brand-light">Day 2: City Landmark Tour</span>
+<span class="text-brand-muted font-mono">Confirmed</span>
+</div>
+<div class="bg-brand-surface p-2.5 rounded border border-brand-border/40 flex justify-between items-center">
+<span class="text-brand-light">Day 3: Coastal Transit</span>
+<span class="text-brand-muted font-mono">Planned</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<!-- Project 02: ElecTrack -->
+<article class="bg-brand-surface rounded-2xl border border-brand-border/70 p-8 sm:p-12 hover:border-brand-muted/40 transition-all duration-300" data-purpose="project-card">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<div class="lg:col-span-7 card-grid-bg bg-brand-surfaceAlt rounded-xl border border-brand-border/60 p-6 sm:p-8 flex items-center justify-center min-h-[260px]">
+<!-- Concept Display Block -->
+<div class="w-full max-w-md bg-brand-black/90 rounded-lg p-5 border border-brand-border shadow-xl">
+<div class="flex items-center justify-between pb-3 mb-4 border-b border-brand-border/50 text-xs font-mono text-brand-muted">
+<span class="text-brand-light font-bold">ElecTrack Metrics</span>
+<span class="text-emerald-400">Live 1.4 kW/h</span>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between items-end text-xs">
+<span class="text-brand-muted">Household Peak Load</span>
+<span class="font-mono text-brand-light">68% Capacity</span>
+</div>
+<div class="w-full bg-brand-surface h-2 rounded-full overflow-hidden border border-brand-border/30">
+<div class="bg-brand-light h-full rounded-full w-[68%]"></div>
+</div>
+<div class="grid grid-cols-3 gap-2 pt-2 text-center text-[11px] font-mono">
+<div class="p-2 bg-brand-surface rounded border border-brand-border/40 text-brand-muted">Morning: 0.8kW</div>
+<div class="p-2 bg-brand-surface rounded border border-brand-border/40 text-brand-muted">Noon: 1.2kW</div>
+<div class="p-2 bg-brand-surface rounded border border-brand-border/40 text-brand-light">Night: 2.1kW</div>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-5 flex flex-col justify-center">
+<span class="text-xs font-mono text-brand-muted tracking-wider mb-2">02 / SMART MONITORING</span>
+<h3 class="text-2xl sm:text-3xl font-bold text-brand-light mb-3">ElecTrack</h3>
+<p class="text-brand-muted text-sm sm:text-base leading-relaxed mb-6 font-light">
+                  A smart energy management concept engineered to assist residential households in monitoring consumption, estimating projected monthly utility costs, and detecting high-load peak usage patterns.
+                </p>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="px-3 py-1 rounded-full text-xs font-mono bg-brand-surfaceAlt border border-brand-border text-brand-light">Python</span>
+<span class="px-3 py-1 rounded-full text-xs font-mono bg-brand-surfaceAlt border border-brand-border text-brand-light">Django</span>
+<span class="px-3 py-1 rounded-full text-xs font-mono bg-brand-surfaceAlt border border-brand-border text-brand-light">Time-Series DB</span>
+</div>
+<div>
+<a class="inline-flex items-center text-xs sm:text-sm font-semibold text-brand-light hover:underline gap-1.5 group" href="#contact">
+<span>View Project Inquiries</span>
+<span class="transform group-hover:translate-x-1 transition-transform">→</span>
+</a>
+</div>
+</div>
+</div>
+</article>
+<!-- Project 03: Palosebo -->
+<article class="bg-brand-surface rounded-2xl border border-brand-border/70 p-8 sm:p-12 hover:border-brand-muted/40 transition-all duration-300" data-purpose="project-card">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<div class="lg:col-span-5 order-2 lg:order-1 flex flex-col justify-center">
+<span class="text-xs font-mono text-brand-muted tracking-wider mb-2">03 / MULTIPLAYER GAME CONCEPT</span>
+<h3 class="text-2xl sm:text-3xl font-bold text-brand-light mb-3">Palosebo</h3>
+<p class="text-brand-muted text-sm sm:text-base leading-relaxed mb-6 font-light">
+                  Traditional Filipino-inspired competitive greased-pole climbing game concept featuring physics-based friction mechanics, a synchronized 2-player race mode, and distributed global leaderboards.
+                </p>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="px-3 py-1 rounded-full text-xs font-mono bg-brand-surfaceAlt border border-brand-border text-brand-light">JavaScript</span>
+<span class="px-3 py-1 rounded-full text-xs font-mono bg-brand-surfaceAlt border border-brand-border text-brand-light">HTML5 Canvas</span>
+<span class="px-3 py-1 rounded-full text-xs font-mono bg-brand-surfaceAlt border border-brand-border text-brand-light">WebSockets</span>
+</div>
+<div>
+<a class="inline-flex items-center text-xs sm:text-sm font-semibold text-brand-light hover:underline gap-1.5 group" href="#contact">
+<span>View Project Inquiries</span>
+<span class="transform group-hover:translate-x-1 transition-transform">→</span>
+</a>
+</div>
+</div>
+<div class="lg:col-span-7 order-1 lg:order-2 card-grid-bg bg-brand-surfaceAlt rounded-xl border border-brand-border/60 p-6 sm:p-8 flex items-center justify-center min-h-[260px]">
+<!-- Concept Display Block -->
+<div class="w-full max-w-md bg-brand-black/90 rounded-lg p-5 border border-brand-border shadow-xl">
+<div class="flex items-center justify-between pb-3 mb-4 border-b border-brand-border/50 text-xs font-mono text-brand-muted">
+<span class="text-brand-light font-bold">Race Match #849</span>
+<span class="text-amber-400">Live Pole Ascent</span>
+</div>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between text-xs mb-1">
+<span class="text-brand-light">Player 1 (Local)</span>
+<span class="font-mono text-xs text-brand-muted">8.2m / 10m</span>
+</div>
+<div class="w-full bg-brand-surface h-2 rounded-full overflow-hidden border border-brand-border/30">
+<div class="bg-brand-light h-full rounded-full w-[82%]"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-xs mb-1">
+<span class="text-brand-muted">Player 2 (Remote)</span>
+<span class="font-mono text-xs text-brand-muted">7.1m / 10m</span>
+</div>
+<div class="w-full bg-brand-surface h-2 rounded-full overflow-hidden border border-brand-border/30">
+<div class="bg-brand-muted h-full rounded-full w-[71%]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- END: SelectedWorkSection -->
+<!-- BEGIN: SkillsSection -->
+<section class="py-24 border-t border-brand-border/40 bg-brand-surface/20" data-purpose="skills-section" id="skills">
+<div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+<div class="text-center max-w-xl mx-auto mb-16">
+<span class="text-xs font-bold tracking-[0.25em] uppercase text-brand-muted">COMPETENCIES</span>
+<h2 class="text-3xl font-display font-bold text-brand-light mt-2">Tools &amp; Technologies</h2>
+<p class="text-sm text-brand-muted mt-3">The foundational stack and workflow tools I use to design, build, and deploy software.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Skill Category 1 -->
+<div class="p-6 rounded-xl bg-brand-surface border border-brand-border/60 hover:border-brand-muted/40 transition-all">
+<h3 class="text-xs font-bold font-mono tracking-wider text-brand-muted uppercase mb-4">Programming Languages</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-brand-surfaceAlt border border-brand-border text-brand-light">Python</span>
+<span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-brand-surfaceAlt border border-brand-border text-brand-light">JavaScript (ES6+)</span>
+</div>
+</div>
+<!-- Skill Category 2 -->
+<div class="p-6 rounded-xl bg-brand-surface border border-brand-border/60 hover:border-brand-muted/40 transition-all">
+<h3 class="text-xs font-bold font-mono tracking-wider text-brand-muted uppercase mb-4">Web &amp; Backend</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-brand-surfaceAlt border border-brand-border text-brand-light">Django</span>
+<span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-brand-surfaceAlt border border-brand-border text-brand-light">Node.js</span>
+<span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-brand-surfaceAlt border border-brand-border text-brand-light">REST APIs</span>
+</div>
+</div>
+<!-- Skill Category 3 -->
+<div class="p-6 rounded-xl bg-brand-surface border border-brand-border/60 hover:border-brand-muted/40 transition-all">
+<h3 class="text-xs font-bold font-mono tracking-wider text-brand-muted uppercase mb-4">Databases</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-brand-surfaceAlt border border-brand-border text-brand-light">PostgreSQL</span>
+<span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-brand-surfaceAlt border border-brand-border text-brand-light">Relational Modeling</span>
+</div>
+</div>
+<!-- Skill Category 4 -->
+<div class="p-6 rounded-xl bg-brand-surface border border-brand-border/60 hover:border-brand-muted/40 transition-all">
+<h3 class="text-xs font-bold font-mono tracking-wider text-brand-muted uppercase mb-4">Mobile Engineering</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-brand-surfaceAlt border border-brand-border text-brand-light">React Native</span>
+<span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-brand-surfaceAlt border border-brand-border text-brand-light">Mobile UI Patterns</span>
+</div>
+</div>
+<!-- Skill Category 5 -->
+<div class="p-6 rounded-xl bg-brand-surface border border-brand-border/60 hover:border-brand-muted/40 transition-all sm:col-span-2 lg:col-span-2">
+<h3 class="text-xs font-bold font-mono tracking-wider text-brand-muted uppercase mb-4">Tools, Architecture &amp; Workflow</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-brand-surfaceAlt border border-brand-border text-brand-light">Git</span>
+<span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-brand-surfaceAlt border border-brand-border text-brand-light">GitHub</span>
+<span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-brand-surfaceAlt border border-brand-border text-brand-light">VS Code</span>
+<span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-brand-surfaceAlt border border-brand-border text-brand-light">System Design Fundamentals</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: SkillsSection -->
+<!-- BEGIN: ContactCTA -->
+<section class="py-24 sm:py-32 relative text-center border-t border-brand-border/40" data-purpose="contact-section" id="contact">
+<div class="max-w-3xl mx-auto px-6 sm:px-8">
+<span class="text-xs font-bold tracking-[0.25em] uppercase text-brand-muted mb-4 inline-block">GET IN TOUCH</span>
+<h2 class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-brand-light tracking-tight mb-6">
+          Have a project in mind?
+        </h2>
+<p class="text-brand-muted text-base sm:text-lg mb-10 max-w-lg mx-auto font-light">
+          Let's connect and build something useful. Whether it's a software opportunity, collaboration, or technical inquiry.
+        </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+<a class="w-full sm:w-auto px-8 py-4 rounded-full text-sm font-semibold bg-brand-light text-brand-black hover:bg-white hover:shadow-[0_0_30px_rgba(243,241,236,0.35)] transition-all duration-300" href="mailto:francis@developer.io">
+            francis@developer.io
+          </a>
+<a class="w-full sm:w-auto px-8 py-4 rounded-full text-sm font-medium border border-brand-border bg-brand-surface hover:bg-brand-surfaceAlt text-brand-light transition-all duration-300" href="https://github.com" rel="noopener noreferrer" target="_blank">
+            GitHub Profile
+          </a>
+</div>
+</div>
+</section>
+<!-- END: ContactCTA -->
+</main>
+<!-- BEGIN: SiteFooter -->
+<footer class="border-t border-brand-border/50 py-10 bg-brand-black" data-purpose="site-footer">
+<div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex flex-col sm:flex-row items-center justify-between gap-6">
+<!-- Wordmark -->
+<div class="flex items-center gap-2">
+<span class="text-sm font-bold tracking-tight text-brand-light">Francis.</span>
+<span class="text-xs text-brand-muted">© 2025 · Built with precision</span>
+</div>
+<!-- Footer Quick Links -->
+<div class="flex items-center gap-6 text-xs text-brand-muted">
+<a class="hover:text-brand-light transition-colors" href="#hero">Back to Top ↑</a>
+</div>
+</div>
+</footer>
+<!-- END: SiteFooter -->
+</body></html>
